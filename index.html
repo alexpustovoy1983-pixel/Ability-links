@@ -23,8 +23,8 @@ body{min-height:100vh;background:linear-gradient(180deg,#fbfdff 0%,#edf7ff 30%,#
 .panel{display:none;width:min(430px,94vw);background:rgba(255,255,255,.96);border:1px solid rgba(160,207,246,.7);border-radius:24px;padding:20px;margin-top:4px;box-shadow:0 12px 30px rgba(38,104,168,.13);z-index:5}
 .panel.open{display:block}
 .phone{display:block;padding:13px 4px;font-size:20px;font-weight:650;color:var(--blue);text-decoration:none;border-bottom:1px solid #e6f1fa}.phone:last-child{border:0}
-.row{margin-bottom:16px}.label{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:#6685a5;margin-bottom:6px}.value{font-size:15px;line-height:1.45;color:#173f68;overflow-wrap:anywhere}
-.copy{border:0;background:#e8f4ff;color:var(--blue);border-radius:12px;padding:10px 13px;font-weight:700;margin-top:8px}
+.row{position:relative;margin-bottom:0;padding:16px 58px 16px 0;border-bottom:1px solid #e6f1fa}.row:last-child{border-bottom:0}.label{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:#6685a5;margin-bottom:6px}.value{font-size:15px;line-height:1.45;color:#173f68;overflow-wrap:anywhere}.row .copy{position:absolute;right:0;top:50%;transform:translateY(-50%)}.copy.copied:after{content:"✓";font-size:23px;font-weight:700}.copy.copied svg{display:none}
+.copy{width:46px;height:46px;border:0;background:#e8f4ff;color:var(--blue);border-radius:50%;display:grid;place-items:center;cursor:pointer;flex:0 0 auto;padding:0}
 @media(max-width:390px){.logo{width:205px;height:205px}.smile{height:220px}.action{width:104px;height:104px}.phonebtn{top:82px}.action svg{width:49px;height:49px}.hryvnia{font-size:52px}}
 </style>
 </head>
@@ -38,12 +38,12 @@ body{min-height:100vh;background:linear-gradient(180deg,#fbfdff 0%,#edf7ff 30%,#
 </div>
 <div id="contacts" class="panel"><a class="phone" href="tel:+380509866147">+380 50 986 61 47</a><a class="phone" href="tel:+380739866147">+380 73 986 61 47</a></div>
 <div id="payment" class="panel">
-<div class="row"><div class="label">IBAN</div><div class="value">UA523220010000026007340047356</div><button class="copy" onclick="copyText('UA523220010000026007340047356',this)">Скопіювати IBAN</button></div>
-<div class="row"><div class="label">ЄДРПОУ</div><div class="value">3056909010</div><button class="copy" onclick="copyText('3056909010',this)">Скопіювати ЄДРПОУ</button></div>
-<div class="row"><div class="label">Призначення платежу</div><div class="value">Сплата за послуги з фізичної терапії</div><button class="copy" onclick="copyText('Сплата за послуги з фізичної терапії',this)">Скопіювати призначення</button></div>
+<div class="row"><div class="label">IBAN</div><div class="value">UA523220010000026007340047356</div><button class="copy" aria-label="Скопіювати IBAN" onclick="copyText('UA523220010000026007340047356',this)"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="8" y="8" width="11" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h2"/></svg></button></div>
+<div class="row"><div class="label">ЄДРПОУ</div><div class="value">3056909010</div><button class="copy" aria-label="Скопіювати ЄДРПОУ" onclick="copyText('3056909010',this)"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="8" y="8" width="11" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h2"/></svg></button></div>
+<div class="row"><div class="label">Призначення платежу</div><div class="value">Сплата за послуги з фізичної терапії</div><button class="copy" aria-label="Скопіювати призначення" onclick="copyText('Сплата за послуги з фізичної терапії',this)"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="8" y="8" width="11" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h2"/></svg></button></div>
 </div>
 </main>
 <script>
 function toggle(id){document.querySelectorAll('.panel').forEach(p=>{if(p.id!==id)p.classList.remove('open')});document.getElementById(id).classList.toggle('open')}
-async function copyText(t,b){try{await navigator.clipboard.writeText(t);let x=b.textContent;b.textContent='Скопійовано ✓';setTimeout(()=>b.textContent=x,1400)}catch(e){prompt('Скопіюйте:',t)}}
+async function copyText(t,b){try{await navigator.clipboard.writeText(t);b.classList.add('copied');setTimeout(()=>b.classList.remove('copied'),900)}catch(e){prompt('Скопіюйте:',t)}}
 </script></body></html>
