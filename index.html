@@ -10,20 +10,20 @@
 *{box-sizing:border-box}
 html,body{margin:0;min-height:100%;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif}
 body{min-height:100vh;background:linear-gradient(180deg,#fbfdff 0%,#edf7ff 30%,#cde9ff 64%,#8dc8fb 100%);color:var(--navy)}
-.wrap{min-height:100vh;max-width:520px;margin:auto;display:flex;flex-direction:column;align-items:center;padding:clamp(70px,16vh,180px) 24px 60px}
-.logo{width:230px;height:230px;display:block;filter:drop-shadow(0 12px 22px rgba(27,89,156,.12))}
-.smile{position:relative;width:min(430px,94vw);height:235px;margin-top:10px}
-.arc{position:absolute;left:12%;right:12%;top:63px;height:116px;border-bottom:7px solid rgba(255,255,255,.78);border-radius:0 0 50% 50%;filter:drop-shadow(0 4px 7px rgba(50,120,190,.10))}
-.action{position:absolute;width:116px;height:116px;border-radius:50%;border:1px solid rgba(138,198,250,.7);background:rgba(255,255,255,.94);display:grid;place-items:center;color:var(--blue);box-shadow:0 12px 26px rgba(38,104,168,.15);text-decoration:none;cursor:pointer;-webkit-tap-highlight-color:transparent;z-index:2}
+.wrap{min-height:100vh;max-width:520px;margin:auto;display:flex;flex-direction:column;align-items:center;padding:clamp(24px,6vh,64px) 24px 40px}
+.logo{width:205px;height:205px;display:block;filter:drop-shadow(0 12px 22px rgba(27,89,156,.12))}
+.smile{position:relative;width:min(430px,94vw);height:205px;margin-top:0}
+.arc{position:absolute;left:12%;right:12%;top:48px;height:102px;border-bottom:7px solid rgba(255,255,255,.78);border-radius:0 0 50% 50%;filter:drop-shadow(0 4px 7px rgba(50,120,190,.10))}
+.action{position:absolute;width:104px;height:104px;border-radius:50%;border:1px solid rgba(138,198,250,.7);background:rgba(255,255,255,.94);display:grid;place-items:center;color:var(--blue);box-shadow:0 12px 26px rgba(38,104,168,.15);text-decoration:none;cursor:pointer;-webkit-tap-highlight-color:transparent;z-index:2}
 .action:active{transform:scale(.96)}
-.ig{left:0;top:12px}.pay{right:0;top:12px}.phonebtn{left:50%;top:90px;transform:translateX(-50%)}
+.ig{left:0;top:8px}.pay{right:0;top:8px}.phonebtn{left:50%;top:72px;transform:translateX(-50%)}
 .phonebtn:active{transform:translateX(-50%) scale(.96)}
 .action svg{width:54px;height:54px}
 .hryvnia{font-size:58px;font-weight:500;line-height:1}
-.panel{display:none;width:min(430px,94vw);background:rgba(255,255,255,.96);border:1px solid rgba(160,207,246,.7);border-radius:24px;padding:20px;margin-top:4px;box-shadow:0 12px 30px rgba(38,104,168,.13);z-index:5}
+.panel{display:none;width:min(430px,94vw);background:rgba(255,255,255,.96);border:1px solid rgba(160,207,246,.7);border-radius:24px;padding:14px 18px;margin-top:0;box-shadow:0 12px 30px rgba(38,104,168,.13);z-index:5}
 .panel.open{display:block}
 .phone{display:block;padding:13px 4px;font-size:20px;font-weight:650;color:var(--blue);text-decoration:none;border-bottom:1px solid #e6f1fa}.phone:last-child{border:0}
-.row{position:relative;margin-bottom:0;padding:16px 58px 16px 0;border-bottom:1px solid #e6f1fa}.row:last-child{border-bottom:0}.label{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:#6685a5;margin-bottom:6px}.value{font-size:15px;line-height:1.45;color:#173f68;overflow-wrap:anywhere}.row .copy{position:absolute;right:0;top:50%;transform:translateY(-50%)}.copy.copied:after{content:"✓";font-size:23px;font-weight:700}.copy.copied svg{display:none}
+.row{position:relative;margin-bottom:0;padding:12px 54px 12px 0;border-bottom:1px solid #e6f1fa}.row:last-child{border-bottom:0}.label{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:#6685a5;margin-bottom:6px}.value{font-size:15px;line-height:1.45;color:#173f68;overflow-wrap:anywhere}.row .copy{position:absolute;right:0;top:50%;transform:translateY(-50%)}.copy.copied:after{content:"✓";font-size:23px;font-weight:700}.copy.copied svg{display:none}
 .copy{width:46px;height:46px;border:0;background:#e8f4ff;color:var(--blue);border-radius:50%;display:grid;place-items:center;cursor:pointer;flex:0 0 auto;padding:0}
 @media(max-width:390px){.logo{width:205px;height:205px}.smile{height:220px}.action{width:104px;height:104px}.phonebtn{top:82px}.action svg{width:49px;height:49px}.hryvnia{font-size:52px}}
 </style>
