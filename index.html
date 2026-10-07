@@ -3,36 +3,45 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#f4f8fb">
-<title>Ability — контакти та оплата</title>
+<meta name="theme-color" content="#eef7ff">
+<title>Ability</title>
 <style>
-:root{--blue:#1769aa;--blue2:#0f578f;--ink:#173247;--muted:#6d8292;--bg:#f4f8fb;--card:#fff;--line:#dbe7ef}
-*{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;background:linear-gradient(180deg,#eef6fb 0,#f8fbfd 100%);color:var(--ink);min-height:100vh}
-.wrap{max-width:520px;margin:auto;padding:34px 20px 34px}.brand{text-align:center;margin-bottom:28px}
-.logo{width:190px;height:190px;object-fit:contain;display:block;margin:0 auto 14px;filter:drop-shadow(0 12px 24px rgba(23,61,112,.10))}
-h1{font-size:34px;line-height:1;margin:0 0 9px;letter-spacing:-.8px}.sub{margin:0;color:var(--muted);font-size:16px}
-.actions{display:grid;gap:14px}.btn{width:100%;border:1px solid var(--line);background:var(--card);border-radius:20px;min-height:80px;padding:15px 17px;display:flex;align-items:center;gap:15px;text-decoration:none;color:var(--ink);box-shadow:0 8px 24px rgba(32,75,103,.075);font:inherit;text-align:left;cursor:pointer}
-.btn:active{transform:scale(.985)}.icon{width:46px;height:46px;border-radius:14px;background:#eaf4fb;display:grid;place-items:center;color:var(--blue);font-size:22px;flex:0 0 auto}.txt{flex:1}.title{font-size:18px;font-weight:700;margin-bottom:3px}.desc{font-size:13px;color:var(--muted)}.arrow{color:#8da1af;font-size:23px}
-.panel{display:none;background:white;border:1px solid var(--line);border-radius:19px;padding:18px;margin-top:10px;box-shadow:0 7px 20px rgba(32,75,103,.07)}.panel.open{display:block}
-.phone{display:block;padding:11px 0;font-size:19px;font-weight:650;color:var(--blue);text-decoration:none;border-bottom:1px solid #edf2f5}.phone:last-child{border:0}
-.row{margin:0 0 14px}.label{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:6px}.value{font-size:15px;line-height:1.45;overflow-wrap:anywhere}.copy{border:0;background:#e8f2f9;color:var(--blue2);border-radius:12px;padding:10px 13px;font-weight:700;margin-top:8px;cursor:pointer}
-.note{font-size:12px;color:var(--muted);line-height:1.45;margin-top:15px}.footer{text-align:center;color:#91a2ae;font-size:12px;margin-top:30px}
+:root{--blue:#1267c4;--navy:#123d79;--line:#b9dcff}
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif}
+body{min-height:100vh;background:linear-gradient(180deg,#fbfdff 0%,#edf7ff 30%,#cde9ff 64%,#8dc8fb 100%);color:var(--navy)}
+.wrap{min-height:100vh;max-width:520px;margin:auto;display:flex;flex-direction:column;align-items:center;padding:clamp(70px,16vh,180px) 24px 60px}
+.logo{width:230px;height:230px;display:block;filter:drop-shadow(0 12px 22px rgba(27,89,156,.12))}
+.smile{position:relative;width:min(430px,94vw);height:235px;margin-top:10px}
+.arc{position:absolute;left:12%;right:12%;top:63px;height:116px;border-bottom:7px solid rgba(255,255,255,.78);border-radius:0 0 50% 50%;filter:drop-shadow(0 4px 7px rgba(50,120,190,.10))}
+.action{position:absolute;width:116px;height:116px;border-radius:50%;border:1px solid rgba(138,198,250,.7);background:rgba(255,255,255,.94);display:grid;place-items:center;color:var(--blue);box-shadow:0 12px 26px rgba(38,104,168,.15);text-decoration:none;cursor:pointer;-webkit-tap-highlight-color:transparent;z-index:2}
+.action:active{transform:scale(.96)}
+.ig{left:0;top:12px}.pay{right:0;top:12px}.phonebtn{left:50%;top:90px;transform:translateX(-50%)}
+.phonebtn:active{transform:translateX(-50%) scale(.96)}
+.action svg{width:54px;height:54px}
+.hryvnia{font-size:58px;font-weight:500;line-height:1}
+.panel{display:none;width:min(430px,94vw);background:rgba(255,255,255,.96);border:1px solid rgba(160,207,246,.7);border-radius:24px;padding:20px;margin-top:4px;box-shadow:0 12px 30px rgba(38,104,168,.13);z-index:5}
+.panel.open{display:block}
+.phone{display:block;padding:13px 4px;font-size:20px;font-weight:650;color:var(--blue);text-decoration:none;border-bottom:1px solid #e6f1fa}.phone:last-child{border:0}
+.row{margin-bottom:16px}.label{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:#6685a5;margin-bottom:6px}.value{font-size:15px;line-height:1.45;color:#173f68;overflow-wrap:anywhere}
+.copy{border:0;background:#e8f4ff;color:var(--blue);border-radius:12px;padding:10px 13px;font-weight:700;margin-top:8px}
+@media(max-width:390px){.logo{width:205px;height:205px}.smile{height:220px}.action{width:104px;height:104px}.phonebtn{top:82px}.action svg{width:49px;height:49px}.hryvnia{font-size:52px}}
 </style>
 </head>
 <body><main class="wrap">
-<header class="brand"><svg class="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" role="img" aria-label="ABILITY"><defs><linearGradient id="lg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#eef4ff"/><stop offset=".52" stop-color="#b9d0fb"/><stop offset="1" stop-color="#5d91f3"/></linearGradient></defs><circle cx="250" cy="250" r="168" fill="url(#lg)" stroke="#0b376f" stroke-width="5"/><circle cx="250" cy="250" r="162" fill="none" stroke="#0b376f" stroke-width="1.5"/><circle cx="250" cy="250" r="171" fill="none" stroke="#0b376f" stroke-width="1.2"/><text x="250" y="273" text-anchor="middle" fill="#173d73" font-family="Georgia,Times New Roman,serif" font-size="76" letter-spacing="1">ABILITY</text></svg><p class="sub">Центр фізичної терапії</p></header>
-<section class="actions">
-<a class="btn" href="https://www.instagram.com/center_ability?stkn=MTE3ejVua2x2a3d6dg%3D%3D&utm_source=qr" target="_blank" rel="noopener"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="25" height="25" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.7" r="1" fill="currentColor" stroke="none"/></svg></span><span class="txt"><div class="title">Instagram</div><div class="desc">@center_ability</div></span><span class="arrow">›</span></a>
-<button class="btn" type="button" onclick="toggle('contacts')"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="25" height="25" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M7.2 3.8 4.8 5.1c-.8.4-1.2 1.3-.9 2.2 1.8 6.1 6.6 10.9 12.7 12.7.9.3 1.8-.1 2.2-.9l1.3-2.4c.4-.8.2-1.7-.5-2.2l-2.7-2c-.7-.5-1.6-.4-2.2.2l-1.5 1.5a14.2 14.2 0 0 1-3.5-3.5l1.5-1.5c.6-.6.7-1.5.2-2.2l-2-2.7c-.5-.7-1.4-.9-2.2-.5Z"/></svg></span><span class="txt"><div class="title">Контакти</div><div class="desc">Зателефонувати до центру</div></span><span class="arrow">›</span></button>
+<svg class="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" role="img" aria-label="ABILITY"><defs><linearGradient id="lg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f8fbff"/><stop offset=".5" stop-color="#d9e9ff"/><stop offset="1" stop-color="#68a7f5"/></linearGradient></defs><circle cx="250" cy="250" r="168" fill="url(#lg)" stroke="#0b376f" stroke-width="5"/><circle cx="250" cy="250" r="162" fill="none" stroke="#0b376f" stroke-width="1.5"/><circle cx="250" cy="250" r="171" fill="none" stroke="#0b376f" stroke-width="1.2"/><text x="250" y="273" text-anchor="middle" fill="#173d73" font-family="Georgia,Times New Roman,serif" font-size="76" letter-spacing="1">ABILITY</text></svg>
+<div class="smile">
+<div class="arc"></div>
+<a class="action ig" href="https://www.instagram.com/center_ability?stkn=MTE3ejVua2x2a3d6dg%3D%3D&utm_source=qr" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.7" r="1" fill="currentColor" stroke="none"/></svg></a>
+<button class="action phonebtn" type="button" onclick="toggle('contacts')" aria-label="Контакти"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7.2 3.8 4.8 5.1c-.8.4-1.2 1.3-.9 2.2 1.8 6.1 6.6 10.9 12.7 12.7.9.3 1.8-.1 2.2-.9l1.3-2.4c.4-.8.2-1.7-.5-2.2l-2.7-2c-.7-.5-1.6-.4-2.2.2l-1.5 1.5a14.2 14.2 0 0 1-3.5-3.5l1.5-1.5c.6-.6.7-1.5.2-2.2l-2-2.7c-.5-.7-1.4-.9-2.2-.5Z"/></svg></button>
+<button class="action pay" type="button" onclick="toggle('payment')" aria-label="Оплата"><span class="hryvnia">₴</span></button>
+</div>
 <div id="contacts" class="panel"><a class="phone" href="tel:+380509866147">+380 50 986 61 47</a><a class="phone" href="tel:+380739866147">+380 73 986 61 47</a></div>
-<button class="btn" type="button" onclick="toggle('payment')"><span class="icon" aria-hidden="true" style="font-size:27px;font-weight:600;line-height:1">₴</span><span class="txt"><div class="title">Оплата</div><div class="desc">Реквізити для оплати заняття</div></span><span class="arrow">›</span></button>
 <div id="payment" class="panel">
-<div class="row"><div class="label">IBAN</div><div class="value" id="iban">UA523220010000026007340047356</div><button class="copy" onclick="copyText('UA523220010000026007340047356',this)">Скопіювати IBAN</button></div>
+<div class="row"><div class="label">IBAN</div><div class="value">UA523220010000026007340047356</div><button class="copy" onclick="copyText('UA523220010000026007340047356',this)">Скопіювати IBAN</button></div>
 <div class="row"><div class="label">ЄДРПОУ</div><div class="value">3056909010</div><button class="copy" onclick="copyText('3056909010',this)">Скопіювати ЄДРПОУ</button></div>
 <div class="row"><div class="label">Призначення платежу</div><div class="value">Сплата за послуги з фізичної терапії</div><button class="copy" onclick="copyText('Сплата за послуги з фізичної терапії',this)">Скопіювати призначення</button></div>
-<div class="note">Перед оплатою перевірте реквізити та суму платежу у своєму банківському застосунку.</div>
 </div>
-</section><div class="footer">Ability · Центр фізичної терапії</div>
 </main>
 <script>
 function toggle(id){document.querySelectorAll('.panel').forEach(p=>{if(p.id!==id)p.classList.remove('open')});document.getElementById(id).classList.toggle('open')}
