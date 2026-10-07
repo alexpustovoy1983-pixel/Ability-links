@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#f4f8fb">
+<title>Ability — контакти та оплата</title>
+<style>
+:root{--blue:#1769aa;--blue2:#0f578f;--ink:#173247;--muted:#6d8292;--bg:#f4f8fb;--card:#fff;--line:#dbe7ef}
+*{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;background:linear-gradient(180deg,#eef6fb 0,#f8fbfd 100%);color:var(--ink);min-height:100vh}
+.wrap{max-width:520px;margin:auto;padding:48px 20px 34px}.brand{text-align:center;margin-bottom:32px}
+.mark{width:76px;height:76px;margin:0 auto 17px;border-radius:24px;background:var(--blue);display:grid;place-items:center;color:white;font-weight:800;font-size:32px;letter-spacing:-2px;box-shadow:0 12px 28px rgba(23,105,170,.22)}
+h1{font-size:34px;line-height:1;margin:0 0 9px;letter-spacing:-.8px}.sub{margin:0;color:var(--muted);font-size:16px}
+.actions{display:grid;gap:13px}.btn{width:100%;border:1px solid var(--line);background:var(--card);border-radius:19px;min-height:78px;padding:15px 17px;display:flex;align-items:center;gap:15px;text-decoration:none;color:var(--ink);box-shadow:0 7px 20px rgba(32,75,103,.07);font:inherit;text-align:left;cursor:pointer}
+.btn:active{transform:scale(.985)}.icon{width:46px;height:46px;border-radius:14px;background:#e9f3fa;display:grid;place-items:center;color:var(--blue);font-size:22px;flex:0 0 auto}.txt{flex:1}.title{font-size:18px;font-weight:700;margin-bottom:3px}.desc{font-size:13px;color:var(--muted)}.arrow{color:#8da1af;font-size:23px}
+.panel{display:none;background:white;border:1px solid var(--line);border-radius:19px;padding:18px;margin-top:10px;box-shadow:0 7px 20px rgba(32,75,103,.07)}.panel.open{display:block}
+.phone{display:block;padding:11px 0;font-size:19px;font-weight:650;color:var(--blue);text-decoration:none;border-bottom:1px solid #edf2f5}.phone:last-child{border:0}
+.row{margin:0 0 14px}.label{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:6px}.value{font-size:15px;line-height:1.45;overflow-wrap:anywhere}.copy{border:0;background:#e8f2f9;color:var(--blue2);border-radius:12px;padding:10px 13px;font-weight:700;margin-top:8px;cursor:pointer}
+.note{font-size:12px;color:var(--muted);line-height:1.45;margin-top:15px}.footer{text-align:center;color:#91a2ae;font-size:12px;margin-top:30px}
+</style>
+</head>
+<body><main class="wrap">
+<header class="brand"><div class="mark">A</div><h1>Ability</h1><p class="sub">Центр фізичної терапії</p></header>
+<section class="actions">
+<a class="btn" href="https://www.instagram.com/center_ability?stkn=MTE3ejVua2x2a3d6dg%3D%3D&utm_source=qr" target="_blank" rel="noopener"><span class="icon">◎</span><span class="txt"><div class="title">Instagram</div><div class="desc">@center_ability</div></span><span class="arrow">›</span></a>
+<button class="btn" type="button" onclick="toggle('contacts')"><span class="icon">☎</span><span class="txt"><div class="title">Контакти</div><div class="desc">Зателефонувати до центру</div></span><span class="arrow">›</span></button>
+<div id="contacts" class="panel"><a class="phone" href="tel:+380509866147">+380 50 986 61 47</a><a class="phone" href="tel:+380739866147">+380 73 986 61 47</a></div>
+<button class="btn" type="button" onclick="toggle('payment')"><span class="icon">₴</span><span class="txt"><div class="title">Оплата</div><div class="desc">Реквізити для оплати заняття</div></span><span class="arrow">›</span></button>
+<div id="payment" class="panel">
+<div class="row"><div class="label">IBAN</div><div class="value" id="iban">UA523220010000026007340047356</div><button class="copy" onclick="copyText('UA523220010000026007340047356',this)">Скопіювати IBAN</button></div>
+<div class="row"><div class="label">ЄДРПОУ</div><div class="value">3056909010</div><button class="copy" onclick="copyText('3056909010',this)">Скопіювати ЄДРПОУ</button></div>
+<div class="row"><div class="label">Призначення платежу</div><div class="value">Сплата за послуги з фізичної терапії</div><button class="copy" onclick="copyText('Сплата за послуги з фізичної терапії',this)">Скопіювати призначення</button></div>
+<div class="note">Перед оплатою перевірте реквізити та суму платежу у своєму банківському застосунку.</div>
+</div>
+</section><div class="footer">Ability · Центр фізичної терапії</div>
+</main>
+<script>
+function toggle(id){document.querySelectorAll('.panel').forEach(p=>{if(p.id!==id)p.classList.remove('open')});document.getElementById(id).classList.toggle('open')}
+async function copyText(t,b){try{await navigator.clipboard.writeText(t);let x=b.textContent;b.textContent='Скопійовано ✓';setTimeout(()=>b.textContent=x,1400)}catch(e){prompt('Скопіюйте:',t)}}
+</script></body></html>
