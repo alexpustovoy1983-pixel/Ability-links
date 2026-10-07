@@ -1,49 +1,36 @@
 <!doctype html>
-<html lang="uk">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#eef7ff">
-<title>Ability</title>
+<html lang="uk"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#e8f3ff"><title>Ability</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Forum&display=swap" rel="stylesheet">
 <style>
-:root{--blue:#1267c4;--navy:#123d79;--line:#b9dcff}
-*{box-sizing:border-box}
-html,body{margin:0;min-height:100%;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif}
-body{min-height:100vh;background:linear-gradient(180deg,#fbfdff 0%,#edf7ff 30%,#cde9ff 64%,#8dc8fb 100%);color:var(--navy)}
-.wrap{min-height:100vh;max-width:520px;margin:auto;display:flex;flex-direction:column;align-items:center;padding:clamp(24px,6vh,64px) 24px 40px}
-.logo{width:205px;height:205px;display:block;filter:drop-shadow(0 12px 22px rgba(27,89,156,.12))}
-.smile{position:relative;width:min(430px,94vw);height:205px;margin-top:0}
-.arc{position:absolute;left:12%;right:12%;top:48px;height:102px;border-bottom:7px solid rgba(255,255,255,.78);border-radius:0 0 50% 50%;filter:drop-shadow(0 4px 7px rgba(50,120,190,.10))}
-.action{position:absolute;width:104px;height:104px;border-radius:50%;border:1px solid rgba(138,198,250,.7);background:rgba(255,255,255,.94);display:grid;place-items:center;color:var(--blue);box-shadow:0 12px 26px rgba(38,104,168,.15);text-decoration:none;cursor:pointer;-webkit-tap-highlight-color:transparent;z-index:2}
-.action:active{transform:scale(.96)}
-.ig{left:0;top:8px}.pay{right:0;top:8px}.phonebtn{left:50%;top:72px;transform:translateX(-50%)}
-.phonebtn:active{transform:translateX(-50%) scale(.96)}
-.action svg{width:54px;height:54px}
-.hryvnia{font-size:58px;font-weight:500;line-height:1}
-.panel{display:none;width:min(430px,94vw);background:rgba(255,255,255,.96);border:1px solid rgba(160,207,246,.7);border-radius:24px;padding:14px 18px;margin-top:0;box-shadow:0 12px 30px rgba(38,104,168,.13);z-index:5}
-.panel.open{display:block}
-.phone{display:block;padding:13px 4px;font-size:15px;font-weight:400;letter-spacing:normal;color:#173f68;text-decoration:none;border-bottom:1px solid #e6f1fa}.phone:last-child{border:0}
-.row{position:relative;margin-bottom:0;padding:12px 54px 12px 0;border-bottom:1px solid #e6f1fa}.row:last-child{border-bottom:0}.label{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:#6685a5;margin-bottom:6px}.value{font-size:15px;line-height:1.45;color:#173f68;overflow-wrap:anywhere}.row .copy{position:absolute;right:0;top:50%;transform:translateY(-50%)}.copy.copied:after{content:"✓";font-size:23px;font-weight:700}.copy.copied svg{display:none}
-.copy{width:46px;height:46px;border:0;background:#e8f4ff;color:var(--blue);border-radius:50%;display:grid;place-items:center;cursor:pointer;flex:0 0 auto;padding:0}
-@media(max-width:390px){.logo{width:205px;height:205px}.smile{height:220px}.action{width:104px;height:104px}.phonebtn{top:82px}.action svg{width:49px;height:49px}.hryvnia{font-size:52px}}
-</style>
-</head>
-<body><main class="wrap">
-<svg class="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" role="img" aria-label="ABILITY"><defs><linearGradient id="lg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f8fbff"/><stop offset=".5" stop-color="#d9e9ff"/><stop offset="1" stop-color="#68a7f5"/></linearGradient></defs><circle cx="250" cy="250" r="168" fill="url(#lg)" stroke="#0b376f" stroke-width="5"/><circle cx="250" cy="250" r="162" fill="none" stroke="#0b376f" stroke-width="1.5"/><circle cx="250" cy="250" r="171" fill="none" stroke="#0b376f" stroke-width="1.2"/><text x="250" y="273" text-anchor="middle" fill="#173d73" font-family="Georgia,Times New Roman,serif" font-size="76" letter-spacing="1">ABILITY</text></svg>
-<div class="smile">
-<div class="arc"></div>
-<a class="action ig" href="https://www.instagram.com/center_ability?stkn=MTE3ejVua2x2a3d6dg%3D%3D&utm_source=qr" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.7" r="1" fill="currentColor" stroke="none"/></svg></a>
-<button class="action phonebtn" type="button" onclick="toggle('contacts')" aria-label="Контакти"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7.2 3.8 4.8 5.1c-.8.4-1.2 1.3-.9 2.2 1.8 6.1 6.6 10.9 12.7 12.7.9.3 1.8-.1 2.2-.9l1.3-2.4c.4-.8.2-1.7-.5-2.2l-2.7-2c-.7-.5-1.6-.4-2.2.2l-1.5 1.5a14.2 14.2 0 0 1-3.5-3.5l1.5-1.5c.6-.6.7-1.5.2-2.2l-2-2.7c-.5-.7-1.4-.9-2.2-.5Z"/></svg></button>
-<button class="action pay" type="button" onclick="toggle('payment')" aria-label="Оплата"><span class="hryvnia">₴</span></button>
-</div>
+:root{--brand:#1a3786;--muted:#7890bd;--iconbg:#e8f4ff}
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif}
+body{color:var(--brand);background:linear-gradient(180deg,#f8fbff 0%,#eaf5ff 45%,#cde6ff 100%);min-height:100vh}
+.wrap{width:min(520px,100%);margin:auto;padding:clamp(26px,6vh,58px) 22px 44px}
+.brand{text-align:center;margin-bottom:28px}.logo{display:block;width:205px;height:205px;margin:0 auto 6px}
+.brand-title{font-family:"Forum",Georgia,serif;font-size:31px;line-height:1.05;color:var(--brand);margin:0}
+.actions{display:grid;gap:15px}.card{width:100%;min-height:100px;border:0;border-radius:25px;background:#fff;box-shadow:0 10px 26px rgba(26,55,134,.08);display:grid;grid-template-columns:62px 1fr 22px;align-items:center;gap:16px;padding:15px 20px;text-align:left;text-decoration:none;color:var(--brand);cursor:pointer;-webkit-tap-highlight-color:transparent}
+.card:active{transform:scale(.992)}.icon{width:62px;height:62px;border-radius:50%;display:grid;place-items:center;background:var(--iconbg);color:var(--brand)}.icon svg{width:36px;height:36px}.hryvnia{font-size:39px;line-height:1;font-weight:500}
+.title{font-family:"Forum",Georgia,serif;font-size:31px;line-height:1;color:var(--brand)}.desc{margin-top:5px;font-size:15px;line-height:1.25;color:var(--muted)}.arrow{font-size:36px;font-weight:300;line-height:1;color:var(--brand)}
+.panel{display:none;margin-top:10px;background:#fff;border-radius:22px;padding:14px 18px;box-shadow:0 10px 26px rgba(26,55,134,.08)}.panel.open{display:block}
+.phone{display:block;padding:13px 5px;border-bottom:1px solid #e7eef8;color:#173f68;text-decoration:none;font-size:15px;font-weight:400}.phone:last-child{border-bottom:0}
+.row{position:relative;padding:13px 54px 13px 0;border-bottom:1px solid #e7eef8}.row:last-child{border-bottom:0}.label{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}.value{font-size:15px;line-height:1.4;color:#173f68;overflow-wrap:anywhere}
+.copy{position:absolute;right:0;top:50%;transform:translateY(-50%);width:42px;height:42px;border:0;border-radius:50%;display:grid;place-items:center;background:var(--iconbg);color:var(--brand);cursor:pointer}.copy.copied svg{display:none}.copy.copied:after{content:"✓";font-size:21px;font-weight:700}
+@media(max-width:390px){.wrap{padding-left:18px;padding-right:18px}.logo{width:185px;height:185px}.brand-title{font-size:28px}.card{min-height:92px;grid-template-columns:56px 1fr 20px;padding:13px 16px}.icon{width:56px;height:56px}.title{font-size:28px}.desc{font-size:14px}}
+</style></head><body><main class="wrap">
+<header class="brand">
+<svg class="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" role="img" aria-label="ABILITY"><defs><linearGradient id="lg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fbfdff"/><stop offset=".52" stop-color="#dcecff"/><stop offset="1" stop-color="#83b2f5"/></linearGradient></defs><circle cx="250" cy="250" r="168" fill="url(#lg)" stroke="#1a3786" stroke-width="4"/><circle cx="250" cy="250" r="162" fill="none" stroke="#1a3786" stroke-width="1.4"/><circle cx="250" cy="250" r="171" fill="none" stroke="#1a3786" stroke-width="1"/><text x="250" y="273" text-anchor="middle" fill="#1a3786" font-family="Forum,Georgia,serif" font-size="76">ABILITY</text></svg>
+<p class="brand-title">Центр фізичної терапії</p></header>
+<section class="actions">
+<a class="card" href="https://www.instagram.com/center_ability?stkn=MTE3ejVua2x2a3d6dg%3D%3D&utm_source=qr" target="_blank" rel="noopener"><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.7" r="1" fill="currentColor" stroke="none"/></svg></span><span><span class="title">Instagram</span><span class="desc" style="display:block">@center_ability</span></span><span class="arrow">›</span></a>
+<button class="card" onclick="toggle('contacts')"><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7.2 3.8 4.8 5.1c-.8.4-1.2 1.3-.9 2.2 1.8 6.1 6.6 10.9 12.7 12.7.9.3 1.8-.1 2.2-.9l1.3-2.4c.4-.8.2-1.7-.5-2.2l-2.7-2c-.7-.5-1.6-.4-2.2.2l-1.5 1.5a14.2 14.2 0 0 1-3.5-3.5l1.5-1.5c.6-.6.7-1.5.2-2.2l-2-2.7c-.5-.7-1.4-.9-2.2-.5Z"/></svg></span><span><span class="title">Контакти</span><span class="desc" style="display:block">Зателефонувати до центру</span></span><span class="arrow">›</span></button>
 <div id="contacts" class="panel"><a class="phone" href="tel:+380509866147">+380 50 986 61 47</a><a class="phone" href="tel:+380739866147">+380 73 986 61 47</a></div>
+<button class="card" onclick="toggle('payment')"><span class="icon"><span class="hryvnia">₴</span></span><span><span class="title">Оплата</span><span class="desc" style="display:block">Реквізити для оплати заняття</span></span><span class="arrow">›</span></button>
 <div id="payment" class="panel">
-<div class="row"><div class="label">IBAN</div><div class="value">UA523220010000026007340047356</div><button class="copy" aria-label="Скопіювати IBAN" onclick="copyText('UA523220010000026007340047356',this)"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="8" y="8" width="11" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h2"/></svg></button></div>
-<div class="row"><div class="label">ЄДРПОУ</div><div class="value">3056909010</div><button class="copy" aria-label="Скопіювати ЄДРПОУ" onclick="copyText('3056909010',this)"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="8" y="8" width="11" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h2"/></svg></button></div>
-<div class="row"><div class="label">Призначення платежу</div><div class="value">Сплата за послуги з фізичної терапії</div><button class="copy" aria-label="Скопіювати призначення" onclick="copyText('Сплата за послуги з фізичної терапії',this)"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="8" y="8" width="11" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h2"/></svg></button></div>
-</div>
-</main>
-<script>
-function toggle(id){document.querySelectorAll('.panel').forEach(p=>{if(p.id!==id)p.classList.remove('open')});document.getElementById(id).classList.toggle('open')}
-async function copyText(t,b){try{await navigator.clipboard.writeText(t);b.classList.add('copied');setTimeout(()=>b.classList.remove('copied'),900)}catch(e){prompt('Скопіюйте:',t)}}
-</script></body></html>
+<div class="row"><div class="label">IBAN</div><div class="value">UA523220010000026007340047356</div><button class="copy" aria-label="Скопіювати IBAN" onclick="copyText('UA523220010000026007340047356',this)"><svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="8" y="8" width="11" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h2"/></svg></button></div>
+<div class="row"><div class="label">ЄДРПОУ</div><div class="value">3056909010</div><button class="copy" aria-label="Скопіювати ЄДРПОУ" onclick="copyText('3056909010',this)"><svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="8" y="8" width="11" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h2"/></svg></button></div>
+<div class="row"><div class="label">Призначення платежу</div><div class="value">Сплата за послуги з фізичної терапії</div><button class="copy" aria-label="Скопіювати призначення" onclick="copyText('Сплата за послуги з фізичної терапії',this)"><svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="8" y="8" width="11" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h2"/></svg></button></div>
+</div></section></main>
+<script>function toggle(id){document.querySelectorAll('.panel').forEach(p=>{if(p.id!==id)p.classList.remove('open')});document.getElementById(id).classList.toggle('open')}async function copyText(t,b){try{await navigator.clipboard.writeText(t);b.classList.add('copied');setTimeout(()=>b.classList.remove('copied'),900)}catch(e){prompt('Скопіюйте:',t)}}</script></body></html>
